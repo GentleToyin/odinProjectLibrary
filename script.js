@@ -2,9 +2,9 @@ const inputBox = document.querySelector(".inputField input");
 const addBtn = document.querySelector(".inputField button");
 const books = document.querySelector(".books");
 const deleteAllBtn = document.querySelector(".footer button");
-let author = document.getElementById("authorInput").value;
-let title = document.getElementById("titleInput").value;
-let number = document.getElementById("numberInput").value;
+let authorInput = document.querySelector("authorInput").value;
+let titleInput = document.querySelector("titleInput").value;
+let numberInput = document.querySelector("numberInput").value;
 
 
 inputBox.onkeyup = ()=>{
@@ -70,9 +70,24 @@ deleteAllBtn.onclick = () =>{
 }
 
 
+
+
+
 function openForm(){
     document.getElementById("form")
     .style.display = "block";
 }
 
-console.log(author);
+function addBook (){
+    let author = authorInput.value;
+    let title = titleInput.value;
+    let pages = numberInput.value;
+
+    const books = [];
+
+    books.push({
+        author, title, pages
+    })
+
+
+}
