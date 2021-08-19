@@ -1,11 +1,16 @@
 let books=[];
+function deleteBook(index){
+    books.splice(index,1)
+}
 
 const authorInput = document.getElementById('author');
 const titleInput = document.getElementById('title');
 const pagesInput = document.getElementById('pages');
 const form = document.querySelector('.form');
-const button = document.querySelector('#button')
-const body =  document.querySelector('body')
+const button = document.querySelector('#button');
+const body =  document.querySelector('body');
+const bookList =  document.querySelector('.bookList');
+
 
 
 // let userInput = {
@@ -22,12 +27,13 @@ body.appendChild(myDiv) // add the div into body
 console.log(body) 
 
 //console.log(userInput)
-function bookInstance(title, author){       
+function bookInstance(title, author,page){       
     this.title = title;                     
     this.author = author;
+    this.page = page;
 }
-function addBook (title,author){
-    const newBook = new bookInstance(title, author)
+function addBook (title,author,page){
+    const newBook = new bookInstance(title, author,page)
     books.push(newBook)
 }
 
@@ -35,21 +41,38 @@ function addBook (title,author){
 
 button.addEventListener( "click", (e) => {
     e.preventDefault()
-    const authorValue = authorInput.value
-    const titleValue = titleInput.value
-    addBook(titleValue, authorValue)
-    console.log(books[0].title);
-    console.log(books[0].author);
+    let authorValue = authorInput.value
+    let titleValue = titleInput.value
+    let pageValue = pagesInput.value
+    addBook(titleValue, authorValue, pageValue)
     let titleTag = document.createElement('p');
     let authorTag = document.createElement('p');
-    titleTag.innerHTML = books[0].title;
-    authorTag.innerHTML = books[0].author;
-    body.appendChild(titleTag)
-    body.appendChild(authorTag)
+    let pageTag = document.createElement('p');
+    let divTag = document.createElement('div');
+    let deleteButton = document.createElement('button');
 
+    for (i=0; i<=books.length; i++){
+        titleTag.innerHTML =  books[i].title;
+        authorTag.innerHTML = books[i].author;
+        pageTag.innerHTML = books[i].page;
+        deleteButton.innerHTML = "delete"
+        divTag.appendChild(titleTag)
+        divTag.appendChild(authorTag)
+        divTag.appendChild(pageTag)
+        divTag.appendChild(deleteButton)
+        bookList.appendChild(divTag)
+        form.reset();
+
+    }
+
+    deleteButton.addEventListener("click",(e) => {
+       })
+    
+       deleteBook();   
 })
 
 console.log(books);
+
 
 
 
