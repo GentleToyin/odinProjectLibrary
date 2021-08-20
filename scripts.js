@@ -1,6 +1,6 @@
 let books=[];
-function deleteBook(index){
-    books.splice(index,1)
+function deleteBook(){
+    books.splice(0,1)
 }
 
 const authorInput = document.getElementById('author');
@@ -9,7 +9,9 @@ const pagesInput = document.getElementById('pages');
 const form = document.querySelector('.form');
 const button = document.querySelector('#button');
 const body =  document.querySelector('body');
-const bookList =  document.querySelector('.bookList');
+const bookList =  document.querySelector('.book-list');
+const deleteAllBtn = document.querySelector('.deleteAllBooks')
+const bookWrapper = document.querySelector('.book-wrapper')
 
 
 
@@ -17,14 +19,6 @@ const bookList =  document.querySelector('.bookList');
 //     authorName: author,
 //     booktitle : title,
 //     pages: pages
-// }
-
-let myDiv = document.createElement('div') // create a div element
-myDiv.innerHTML = 'Hello Everyone' //inside the div created insert hello everyone
-
-body.appendChild(myDiv) // add the div into body
-
-console.log(body) 
 
 //console.log(userInput)
 function bookInstance(title, author,page){       
@@ -49,7 +43,11 @@ button.addEventListener( "click", (e) => {
     let authorTag = document.createElement('p');
     let pageTag = document.createElement('p');
     let divTag = document.createElement('div');
+    divTag.classList.add("book-list");
+    bookWrapper.appendChild(divTag)
+
     let deleteButton = document.createElement('button');
+    deleteButton.classList.add("delete-button")
 
     for (i=0; i<=books.length; i++){
         titleTag.innerHTML =  books[i].title;
@@ -60,18 +58,21 @@ button.addEventListener( "click", (e) => {
         divTag.appendChild(authorTag)
         divTag.appendChild(pageTag)
         divTag.appendChild(deleteButton)
-        bookList.appendChild(divTag)
         form.reset();
 
     }
 
     deleteButton.addEventListener("click",(e) => {
+        e.deleteBook(); 
        })
     
-       deleteBook();   
+         
 })
-
 console.log(books);
+deleteAllBtn.onclick = () =>{
+    books=[];
+}
+
 
 
 

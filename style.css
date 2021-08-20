@@ -8,14 +8,96 @@ body{
     height: 100vh;
     width: 100%;
     background:white;
-}
-.books{
     display: flex;
 }
+/* .books{
+    display: flex;
+} */
+.book-wrapper{
+    width: 70%;
+    min-height: 100vh;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    background: #BB9FEA;
+    background: -webkit-linear-gradient(top left, #BB9FEA, #7141D8);
+    background: -moz-linear-gradient(top left, #BB9FEA, #7141D8);
+    background: linear-gradient(to bottom right, #BB9FEA, #7141D8);
+    overflow-y: auto;
 
-.bookList div{ 
+}
+.book-list{
+    height: 200px;
+    min-width: 200px;
+    width: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+p{
+    font-size: 30px;
+    font-weight:1000;
+    font-family: 'Courier New', Courier, monospace;
+}
+#form-wrapper{
+    height: 100vh;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    font-family: 'Courier New', Courier, monospace; 
+    
+}
+.delete-button{
+    width: 150px;
+    height: 40px;
+    margin-left: 25px;
+}
+#form-wrapper h1{
+    font-size: 50px;
+    font-weight:1000;
+    
+    /* margin-top: 120px;
+    display: flex;
+    justify-items: center; */
+    
+}
+ .input{
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+    background: #BB9FEA;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(143, 142, 142, 0.2), 0 6px 20px 0 rgba(172, 172, 172, 0.19);
+
+}
+
+#title{
+    margin-left: 39px;
+} 
+#button{
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+    margin-left: 100px;
+    margin-top: 25px;
+    color: white;
+    background: #BB9FEA;
+    background: -webkit-linear-gradient(top left, #BB9FEA, #7141D8);
+    background: -moz-linear-gradient(top left, #BB9FEA, #7141D8);
+    background: linear-gradient(to bottom right, #BB9FEA, #7141D8);
+    border-radius: 20px;
+    border: none;
+}
+
+/* .book-list div{ 
+    display: flex;
     margin: 20px 20px;
     max-width: 200px;
     max-height: 200px;
@@ -32,8 +114,8 @@ body{
 .bookList div p {
     padding: 5px;
 
-}
-button{
+} */
+/* button{
     cursor: pointer;
     border-radius: 3px;
     width: 150px;
@@ -103,4 +185,4 @@ button{
     display: block;
 }
 
-
+ */
